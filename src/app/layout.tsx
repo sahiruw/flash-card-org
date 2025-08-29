@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Flashcard Organizer",
-  description: "Organize your markdown notes by subjects",
+  title: "PurpleNotes Organizer",
+  description: "Organize your markdown notes by subjects with a beautiful purple theme",
 };
 
 export default function RootLayout({

@@ -92,10 +92,9 @@ export default function AddPage() {
           </div>
         )}
       </main>
-      
-      <footer className="bg-[color:var(--card)] border-t border-[color:var(--border)] py-4 text-center text-sm text-gray-600 dark:text-gray-400">
+        <footer className="bg-[color:var(--card)] border-t border-[color:var(--border)] py-4 text-center text-sm text-gray-600 dark:text-gray-400">
         <div className="container mx-auto">
-          MediNotes Organizer © {new Date().getFullYear()}
+          PurpleNotes Organizer © {new Date().getFullYear()}
         </div>
       </footer>
     </div>

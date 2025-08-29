@@ -10,9 +10,9 @@ export default function Home() {
       <main className="container mx-auto max-w-5xl px-4 py-8 flex-grow">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h1 className="text-4xl font-bold mb-4 text-[color:var(--primary)]">MediNotes Organizer</h1>
+            <h1 className="text-4xl font-bold mb-4 text-[color:var(--primary)]">PurpleNotes Organizer</h1>
             <p className="mb-6 text-lg">
-              Easily manage and organize your medical study notes. Extract markdown text from any source,
+              Easily manage and organize your study notes with our stylish purple theme. Extract markdown text from any source,
               organize by subject, and access your notes anytime.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -66,7 +66,7 @@ export default function Home() {
       
       <footer className="bg-[color:var(--card)] border-t border-[color:var(--border)] py-4 text-center text-sm text-gray-600 dark:text-gray-400">
         <div className="container mx-auto">
-          MediNotes Organizer © {new Date().getFullYear()}
+          PurpleNotes Organizer © {new Date().getFullYear()}
         </div>
       </footer>
     </div>

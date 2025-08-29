@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fff6f9;
+  --background: #f8f5ff;
   --foreground: #333333;
-  --primary: #ff69b4;
-  --primary-dark: #d6478f;
-  --secondary: #ffb6c1;
-  --accent: #ff1493;
-  --border: #ffcce0;
-  --card: #fff0f5;
+  --primary: #9370DB;
+  --primary-dark: #7851c2;
+  --secondary: #b49bec;
+  --accent: #6A0DAD;
+  --border: #d4c4f7;
+  --card: #f5f0ff;
 }
 
 @theme inline {
@@ -20,14 +20,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #291620;
-    --foreground: #f0e6ea;
-    --primary: #ff69b4;
-    --primary-dark: #d6478f;
-    --secondary: #a02665;
-    --accent: #ff1493;
-    --border: #4c2e3b;
-    --card: #3a2631;
+    --background: #1c1429;
+    --foreground: #f0eaf9;
+    --primary: #9370DB;
+    --primary-dark: #7851c2;
+    --secondary: #5a3d8a;
+    --accent: #b088ff;
+    --border: #352a50;
+    --card: #281e3b;
   }
 }
 
@@ -68,11 +68,11 @@ body {
   margin: 1.5rem 0;
   border-radius: 0.5rem;
   overflow: hidden;
-  box-shadow: 0 2px 6px rgba(255, 105, 180, 0.15);
+  box-shadow: 0 2px 6px rgba(147, 112, 219, 0.2);
 }
 
 .markdown-content th {
-  background-color: rgba(255, 182, 193, 0.3);
+  background-color: rgba(147, 112, 219, 0.2);
   color: var(--primary);
   font-weight: 600;
   text-align: left;
@@ -87,25 +87,25 @@ body {
 }
 
 .markdown-content tr:nth-child(even) {
-  background-color: rgba(255, 240, 245, 0.5);
+  background-color: rgba(245, 240, 255, 0.5);
 }
 
 .markdown-content tr:hover {
-  background-color: rgba(255, 182, 193, 0.15);
+  background-color: rgba(147, 112, 219, 0.15);
 }
 
 /* Styles for tables in dark mode */
 @media (prefers-color-scheme: dark) {
   .markdown-content th {
-    background-color: rgba(160, 38, 101, 0.3);
+    background-color: rgba(147, 112, 219, 0.25);
   }
   
   .markdown-content tr:nth-child(even) {
-    background-color: rgba(58, 38, 49, 0.4);
+    background-color: rgba(40, 30, 59, 0.4);
   }
   
   .markdown-content tr:hover {
-    background-color: rgba(160, 38, 101, 0.2);
+    background-color: rgba(147, 112, 219, 0.2);
   }
 }
 
@@ -142,7 +142,7 @@ body {
 
 /* Additional table styling for better readability */
 .markdown-content table code {
-  background-color: rgba(255, 105, 180, 0.1);
+  background-color: rgba(147, 112, 219, 0.15);
   padding: 0.1rem 0.3rem;
   border-radius: 0.25rem;
   font-size: 0.9em;
@@ -161,4 +161,57 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Additional readability enhancements for purple theme */
+.markdown-content h1, 
+.markdown-content h2, 
+.markdown-content h3, 
+.markdown-content h4, 
+.markdown-content h5, 
+.markdown-content h6 {
+  color: var(--accent);
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  font-weight: 600;
+}
+
+.markdown-content a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.markdown-content a:hover {
+  color: var(--accent);
+}
+
+.markdown-content ul, 
+.markdown-content ol {
+  padding-left: 1.5rem;
+}
+
+.markdown-content li {
+  margin-bottom: 0.5rem;
+}
+
+.markdown-content blockquote {
+  border-left: 4px solid var(--primary);
+  padding-left: 1rem;
+  margin-left: 0;
+  color: var(--primary-dark);
+  font-style: italic;
+}
+
+.markdown-content hr {
+  border: none;
+  border-top: 2px solid var(--border);
+  margin: 2rem 0;
+}
+
+.markdown-content code:not(pre code) {
+  background-color: rgba(147, 112, 219, 0.15);
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
 }
