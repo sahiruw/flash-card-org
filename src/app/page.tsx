@@ -1,29 +1,77 @@
+import Link from "next/link";
 import Image from "next/image";
+import Navigation from "@/components/Navigation";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen flex flex-col">
+      <Navigation />
+      
+      <main className="container mx-auto max-w-5xl px-4 py-8 flex-grow">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h1 className="text-4xl font-bold mb-4 text-[color:var(--primary)]">MediNotes Organizer</h1>
+            <p className="mb-6 text-lg">
+              Easily manage and organize your medical study notes. Extract markdown text from any source,
+              organize by subject, and access your notes anytime.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/add" className="btn-primary text-center">
+                Add New Note
+              </Link>
+              <Link href="/subjects" className="btn-secondary text-center">
+                Manage Subjects
+              </Link>
+            </div>
+          </div>
+          
+          <div className="flex justify-center">
+            <Image
+              src="/file.svg"
+              alt="Notes illustration"
+              width={320}
+              height={320}
+              className="dark:invert"
+              priority
+            />
+          </div>
+        </div>
+        
+        <div className="mt-16 grid gap-8 md:grid-cols-3">
+          <div className="card">
+            <h3 className="text-xl font-bold mb-2 text-[color:var(--primary)]">Extract Markdown</h3>
+            <p>
+              Easily extract markdown content from any text. Just paste your content and the app will
+              automatically identify and extract markdown for you.
+            </p>
+          </div>
+          
+          <div className="card">
+            <h3 className="text-xl font-bold mb-2 text-[color:var(--primary)]">Organize by Subject</h3>
+            <p>
+              Keep your notes organized by subject. Create custom subjects and categorize your notes
+              for easy retrieval later.
+            </p>
+          </div>
+          
+          <div className="card">
+            <h3 className="text-xl font-bold mb-2 text-[color:var(--primary)]">Section Navigation</h3>
+            <p>
+              Each note is automatically divided into sections based on headers. Quickly jump between
+              sections for efficient studying.
+            </p>
+          </div>
+        </div>
+      </main>
+      
+      <footer className="bg-[color:var(--card)] border-t border-[color:var(--border)] py-4 text-center text-sm text-gray-600 dark:text-gray-400">
+        <div className="container mx-auto">
+          MediNotes Organizer © {new Date().getFullYear()}
+        </div>
+      </footer>
+    </div>
+  );
+}
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a

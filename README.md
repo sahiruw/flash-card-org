@@ -1,8 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MediNotes Organizer
+
+A beautiful web application for organizing and managing medical study notes. This application allows users to extract Markdown content from text inputs, organize notes by subject, and view them as HTML pages.
+
+## Features
+
+- **Extract Markdown**: Automatically extract Markdown content from pasted text
+- **Subject Organization**: Organize your notes by custom subjects
+- **Section Navigation**: Each note is automatically divided into sections based on headers
+- **Responsive Design**: Optimized for tablet viewing with a medical-themed pink color scheme
+- **Firebase Integration**: Store and retrieve your notes from Firebase
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18.0 or later
+- Firebase account
+
+### Setup
+
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Configure Firebase:
+   - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
+   - Enable Firestore database
+   - Copy your Firebase config
+   - Rename `.env.local.example` to `.env.local` and add your Firebase configuration
+
+4. Run the development server:
 
 ```bash
 npm run dev
@@ -10,15 +44,9 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
 ## Learn More
 

@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fff6f9;
+  --foreground: #333333;
+  --primary: #ff69b4;
+  --primary-dark: #d6478f;
+  --secondary: #ffb6c1;
+  --accent: #ff1493;
+  --border: #ffcce0;
+  --card: #fff0f5;
 }
 
 @theme inline {
@@ -14,9 +20,41 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #291620;
+    --foreground: #f0e6ea;
+    --primary: #ff69b4;
+    --primary-dark: #d6478f;
+    --secondary: #a02665;
+    --accent: #ff1493;
+    --border: #4c2e3b;
+    --card: #3a2631;
   }
+}
+
+/* Custom styles for the app */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.btn-primary {
+  @apply px-4 py-2 rounded-md font-medium bg-[color:var(--primary)] hover:bg-[color:var(--primary-dark)] text-white transition-colors;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 rounded-md font-medium bg-[color:var(--secondary)] hover:opacity-80 text-[color:var(--foreground)] transition-colors;
+}
+
+.card {
+  @apply bg-[color:var(--card)] border border-[color:var(--border)] rounded-lg shadow-md p-6;
+}
+
+.input {
+  @apply rounded-md border border-[color:var(--border)] bg-white dark:bg-gray-800 px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)];
+}
+
+.textarea {
+  @apply rounded-md border border-[color:var(--border)] bg-white dark:bg-gray-800 px-3 py-2 w-full min-h-32 focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)];
 }
 
 body {
