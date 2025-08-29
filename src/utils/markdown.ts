@@ -8,13 +8,27 @@ export function extractMarkdown(text: string): string {
   const containsMarkdownSyntax = /^#{1,6}\s|^\s*[-*+]\s|\|.*\|/.test(text);
   
   // Look for the special "---" divider that often indicates markdown content
-  const markdownDivider = text.includes("---");
+  const markdownDividers = text.match(/\n---+\s*\n/g);
   
-  if (markdownDivider) {
-    // Find content between "---" markers, which typically indicates markdown content
-    const matches = text.match(/---\s*([\s\S]*?)(\s*---\s*|$)/);
-    if (matches && matches[1]) {
-      return matches[1].trim();
+  if (markdownDividers && markdownDividers.length) {
+    // Handle multiple sections separated by "---" markers
+    const sections: string[] = [];
+    
+    // Split the text by "---" markers
+    const parts = text.split(/\n---+\s*\n/);
+    
+    parts.forEach(part => {
+      const trimmedPart = part.trim();
+      if (trimmedPart) {
+        // If the part has markdown indicators, add it
+        if (/^#{1,6}\s|^\s*[-*+]\s|\|.*\|/.test(trimmedPart)) {
+          sections.push(trimmedPart);
+        }
+      }
+    });
+    
+    if (sections.length > 0) {
+      return sections.join('\n\n---\n\n');
     }
   }
   
@@ -28,7 +42,7 @@ export function extractMarkdown(text: string): string {
 }
 
 /**
- * Parses a markdown string into sections based on headers
+ * Parses a markdown string into sections based on headers or section dividers
  * @param markdown The markdown content
  * @returns An array of sections with title and content
  */
@@ -37,11 +51,23 @@ export function parseMarkdownSections(markdown: string) {
   const sections: { title: string; content: string; level: number }[] = [];
   
   let currentSection: { title: string; content: string; level: number } | null = null;
+  let sectionIndex = 0;
   
-  lines.forEach(line => {
+  lines.forEach((line, index) => {
+    // Check if this line is a section divider (---) surrounded by newlines or at document boundaries
+    const isSectionDivider = line.trim() === '---' && 
+      (index === 0 || lines[index-1].trim() === '') && 
+      (index === lines.length-1 || lines[index+1].trim() === '');
+    
     const headerMatch = line.match(/^(#{1,6})\s+(.+)$/);
     
-    if (headerMatch) {
+    if (isSectionDivider) {
+      // If we encounter a section divider, finish the current section
+      if (currentSection) {
+        sections.push({...currentSection});
+        currentSection = null;
+      }
+    } else if (headerMatch) {
       // If we were building a section, push it to the sections array
       if (currentSection) {
         sections.push({...currentSection});
@@ -58,11 +84,21 @@ export function parseMarkdownSections(markdown: string) {
       currentSection.content += (currentSection.content ? '\n' : '') + line;
     } else {
       // If no current section but we have content, create a default section
-      currentSection = {
-        title: 'Introduction',
-        content: line,
-        level: 1
-      };
+      // For multiple sections divided by ---, use numbered introductions
+      if (sections.length > 0 && line.trim() !== '') {
+        sectionIndex++;
+        currentSection = {
+          title: `Section ${sectionIndex}`,
+          content: line,
+          level: 1
+        };
+      } else if (line.trim() !== '') {
+        currentSection = {
+          title: 'Introduction',
+          content: line,
+          level: 1
+        };
+      }
     }
   });
   

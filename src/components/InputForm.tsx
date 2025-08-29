@@ -14,8 +14,7 @@ export default function InputForm({ onSubmit, subjects }: InputFormProps) {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const [rawInput, setRawInput] = useState("");
   const [extractedMarkdown, setExtractedMarkdown] = useState("");
-  
-  const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const value = e.target.value;
     setRawInput(value);
     
@@ -29,6 +28,18 @@ export default function InputForm({ onSubmit, subjects }: InputFormProps) {
   const handleExtract = () => {
     const extracted = extractMarkdown(rawInput);
     setExtractedMarkdown(extracted);
+  };
+  
+  // Count the number of sections in the markdown
+  const getSectionCount = (markdown: string): number => {
+    // Count sections divided by "---" markers
+    const dividerSections = (markdown.match(/\n---\s*\n/g) || []).length + 1;
+    
+    // Count header sections (# headers)
+    const headerMatches = markdown.match(/^#{1,6}\s+.+$/gm) || [];
+    
+    // Return the higher count, with a minimum of 1 section
+    return Math.max(dividerSections, headerMatches.length, 1);
   };
   
   const handleFormSubmit = async (data: any) => {
@@ -109,19 +120,31 @@ export default function InputForm({ onSubmit, subjects }: InputFormProps) {
           Extract Markdown
         </button>
       </div>
-      
-      {extractedMarkdown && (
+        {extractedMarkdown && (
         <div>
-          <label htmlFor="extractedContent" className="block font-medium mb-1">
-            Extracted Markdown
-          </label>
-          <textarea
+          <div className="flex justify-between items-center mb-1">
+            <label htmlFor="extractedContent" className="block font-medium">
+              Extracted Markdown
+            </label>
+            <span className="text-sm text-[color:var(--primary)] font-medium bg-pink-50 dark:bg-pink-900/20 px-2 py-1 rounded-md">
+              {getSectionCount(extractedMarkdown)} {getSectionCount(extractedMarkdown) === 1 ? 'section' : 'sections'} detected
+            </span>
+          </div>
+          <div className="text-xs text-gray-500 mb-2">
+            <p>Sections are defined by headers (#, ##, etc.) or by "---" dividers on their own lines</p>
+          </div>          <textarea
             id="extractedContent"
             className="textarea"
             value={extractedMarkdown}
-            onChange={(e) => setExtractedMarkdown(e.target.value)}
-            {...register("content")}
+            {...register("content", {
+              onChange: (e) => setExtractedMarkdown(e.target.value)
+            })}
           />
+          {extractedMarkdown.includes('---') && (
+            <div className="text-sm text-[color:var(--accent)] mt-2">
+              <p>✓ Multiple sections with "---" dividers detected</p>
+            </div>
+          )}
         </div>
       )}
       

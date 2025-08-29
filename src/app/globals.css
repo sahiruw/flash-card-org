@@ -57,6 +57,106 @@ body {
   @apply rounded-md border border-[color:var(--border)] bg-white dark:bg-gray-800 px-3 py-2 w-full min-h-32 focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)];
 }
 
+/* Markdown content styles */
+.markdown-content {
+  font-size: 16px;
+}
+
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(255, 105, 180, 0.15);
+}
+
+.markdown-content th {
+  background-color: rgba(255, 182, 193, 0.3);
+  color: var(--primary);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+}
+
+.markdown-content td {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.markdown-content tr:nth-child(even) {
+  background-color: rgba(255, 240, 245, 0.5);
+}
+
+.markdown-content tr:hover {
+  background-color: rgba(255, 182, 193, 0.15);
+}
+
+/* Styles for tables in dark mode */
+@media (prefers-color-scheme: dark) {
+  .markdown-content th {
+    background-color: rgba(160, 38, 101, 0.3);
+  }
+  
+  .markdown-content tr:nth-child(even) {
+    background-color: rgba(58, 38, 49, 0.4);
+  }
+  
+  .markdown-content tr:hover {
+    background-color: rgba(160, 38, 101, 0.2);
+  }
+}
+
+/* Responsive tables for small screens */
+@media (max-width: 640px) {
+  .markdown-content table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  /* Add visual indicator for scrollable tables */
+  .markdown-content .overflow-x-auto {
+    position: relative;
+  }
+  
+  .markdown-content .overflow-x-auto::after {
+    content: "→";
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary);
+    font-size: 1.5rem;
+    animation: fadeInOut 1.5s infinite;
+    pointer-events: none;
+  }
+  
+  @keyframes fadeInOut {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+}
+
+/* Additional table styling for better readability */
+.markdown-content table code {
+  background-color: rgba(255, 105, 180, 0.1);
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+
+.markdown-content table em {
+  color: var(--primary);
+}
+
+.markdown-content table strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
