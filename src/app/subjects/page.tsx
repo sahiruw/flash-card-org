@@ -104,7 +104,7 @@ export default function SubjectsPage() {
       </main>
         <footer className="bg-[color:var(--card)] border-t border-[color:var(--border)] py-4 text-center text-sm text-gray-600 dark:text-gray-400">
         <div className="container mx-auto">
-          PurpleNotes Organizer © {new Date().getFullYear()}
+          PuccaNotes Organizer © {new Date().getFullYear()}
         </div>
       </footer>
     </div>

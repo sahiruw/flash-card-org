@@ -1,4 +1,4 @@
-# PurpleNotes
+# PuccaNotes
 
 A beautiful web application for organizing and managing Markdown notes. This application allows users to extract Markdown content from text inputs, organize notes by subject, and view them as HTML pages.
 

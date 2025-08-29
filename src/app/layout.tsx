@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PurpleNotes Organizer",
+  title: "PuccaNotes Organizer",
   description: "Organize your markdown notes by subjects with a beautiful purple theme",
 };
 

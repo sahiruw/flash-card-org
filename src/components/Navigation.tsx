@@ -13,7 +13,7 @@ export default function Navigation() {
     <nav className="bg-[color:var(--card)] py-4 px-6 shadow-md mb-8 border-b border-[color:var(--border)]">
       <div className="container mx-auto max-w-5xl flex items-center justify-between">
         <Link href="/" className="text-2xl font-bold text-[color:var(--primary)]">
-          PurpleNotes
+          PuccaNotes
         </Link>
         
         <div className="flex items-center space-x-4">

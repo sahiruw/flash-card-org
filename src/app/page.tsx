@@ -130,7 +130,7 @@ export default function Home() {
       
       <footer className="border-t border-[color:var(--border)] py-2 text-center text-xs text-gray-500 dark:text-gray-400">
         <div className="container mx-auto">
-          PurpleNotes © {new Date().getFullYear()}
+          PuccaNotes © {new Date().getFullYear()}
         </div>
       </footer>
     </div>
