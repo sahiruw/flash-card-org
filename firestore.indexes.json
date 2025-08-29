@@ -1,13 +1,4 @@
 {
-  "indexes": [
-    {
-      "collectionGroup": "pages",
-      "queryScope": "COLLECTION",
-      "fields": [
-        { "fieldPath": "subjectId", "order": "ASCENDING" },
-        { "fieldPath": "createdAt", "order": "DESCENDING" }
-      ]
-    }
-  ],
+  "indexes": [],
   "fieldOverrides": []
 }

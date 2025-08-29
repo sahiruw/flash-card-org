@@ -1,0 +1,271 @@
+[debug] [2025-08-29T21:43:03.835Z] ----------------------------------------------------------------------
+[debug] [2025-08-29T21:43:03.838Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Asus\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-08-29T21:43:03.838Z] CLI Version:   14.15.1
+[debug] [2025-08-29T21:43:03.838Z] Platform:      win32
+[debug] [2025-08-29T21:43:03.838Z] Node Version:  v20.17.0
+[debug] [2025-08-29T21:43:03.838Z] Time:          Sat Aug 30 2025 03:13:03 GMT+0530 (India Standard Time)
+[debug] [2025-08-29T21:43:03.838Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-29T21:43:04.087Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-29T21:43:04.088Z] > authorizing via signed-in user (sahiruwrcg@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  F:\Projects\flash-card-org\flash-card-org
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-08-29T21:43:23.155Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:43:23.156Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:43:23.164Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2025-08-29T21:43:24.388Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-08-29T21:43:24.388Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project flash-card-org (flash-card-org) 
+[info] 
+=== Firestore Setup
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2025-08-29T21:43:29.012Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:43:29.012Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:43:29.014Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/flash-card-org/services/firestore.googleapis.com [none]
+[debug] [2025-08-29T21:43:29.014Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/flash-card-org/services/firestore.googleapis.com x-goog-quota-user=projects/flash-card-org
+[debug] [2025-08-29T21:43:31.191Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/flash-card-org/services/firestore.googleapis.com 200
+[debug] [2025-08-29T21:43:31.192Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/flash-card-org/services/firestore.googleapis.com [omitted]
+[info] +  firestore: required API firestore.googleapis.com is enabled 
+[debug] [2025-08-29T21:43:31.208Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:43:31.209Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:43:31.210Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/flash-card-org/databases [none]
+[debug] [2025-08-29T21:43:32.513Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/flash-card-org/databases 200
+[debug] [2025-08-29T21:43:32.514Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/flash-card-org/databases {"databases":[{"name":"projects/flash-card-org/databases/(default)","uid":"33a1c10a-1692-4885-a05a-bf1121ec3afe","createTime":"2025-08-29T20:32:01.599481Z","updateTime":"2025-08-29T20:32:01.599481Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2025-08-29T20:43:33.651504Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"etag":"IICF287+sI8DMK77n9nusI8D"}]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2025-08-29T21:43:32.520Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:43:32.521Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:43:32.522Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/flash-card-org/releases pageSize=10&pageToken=
+[debug] [2025-08-29T21:43:34.558Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/flash-card-org/releases 200
+[debug] [2025-08-29T21:43:34.559Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/flash-card-org/releases {"releases":[{"name":"projects/flash-card-org/releases/cloud.firestore","rulesetName":"projects/flash-card-org/rulesets/ca12aed8-c7f6-4f25-ba1e-6c875b997245","createTime":"2025-08-29T20:32:15.580011Z","updateTime":"2025-08-29T20:32:15.580011Z"}]}
+[debug] [2025-08-29T21:43:34.561Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:43:34.561Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:43:34.562Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/flash-card-org/rulesets/ca12aed8-c7f6-4f25-ba1e-6c875b997245 [none]
+[debug] [2025-08-29T21:43:36.083Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/flash-card-org/rulesets/ca12aed8-c7f6-4f25-ba1e-6c875b997245 200
+[debug] [2025-08-29T21:43:36.084Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/flash-card-org/rulesets/ca12aed8-c7f6-4f25-ba1e-6c875b997245 [omitted]
+[info] i  Downloaded the existing Firestore Security Rules from the Firebase console 
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2025-08-29T21:43:48.276Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:43:48.276Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:43:48.276Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:43:48.276Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:43:48.276Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/flash-card-org/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2025-08-29T21:43:48.279Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/flash-card-org/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2025-08-29T21:43:50.348Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/flash-card-org/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2025-08-29T21:43:50.348Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/flash-card-org/databases/(default)/collectionGroups/-/indexes {}
+[debug] [2025-08-29T21:43:50.421Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/flash-card-org/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2025-08-29T21:43:50.422Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/flash-card-org/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/flash-card-org/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[info] i  Downloaded the existing Firestore indexes from the Firebase console 
+[info] i  Skipping write of firestore.indexes.json 
+[info] +  Wrote firestore.indexes.json 
+[info] 
+=== Hosting Setup
+[debug] [2025-08-29T21:43:57.074Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:43:57.074Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:43:57.074Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/flash-card-org [none]
+[debug] [2025-08-29T21:43:57.908Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/flash-card-org 200
+[debug] [2025-08-29T21:43:57.909Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/flash-card-org {"projectId":"flash-card-org","projectNumber":"26387954201","displayName":"flash-card-org","name":"projects/flash-card-org","resources":{"hostingSite":"flash-card-org"},"state":"ACTIVE","etag":"1_fa943e18-3ac7-4073-9111-bb516bb89bb1"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2025-08-29T21:45:38.744Z] ExitPromptError: User force closed the prompt with SIGINT
+    at Interface.sigint (C:\Users\Asus\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\@inquirer\core\dist\commonjs\lib\create-prompt.js:101:37)
+    at Interface.emit (node:events:519:28)
+    at Interface.emit (node:domain:488:12)
+    at [_ttyWrite] [as _ttyWrite] (node:internal/readline/interface:1126:18)
+    at ReadStream.onkeypress (node:internal/readline/interface:265:20)
+    at ReadStream.emit (node:events:531:35)
+    at ReadStream.emit (node:domain:488:12)
+    at emitKeys (node:internal/readline/utils:371:14)
+    at emitKeys.next (<anonymous>)
+    at ReadStream.onData (node:internal/readline/emitKeypressEvents:64:36)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-08-29T21:45:56.295Z] ----------------------------------------------------------------------
+[debug] [2025-08-29T21:45:56.298Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Asus\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting
+[debug] [2025-08-29T21:45:56.298Z] CLI Version:   14.15.1
+[debug] [2025-08-29T21:45:56.298Z] Platform:      win32
+[debug] [2025-08-29T21:45:56.298Z] Node Version:  v20.17.0
+[debug] [2025-08-29T21:45:56.298Z] Time:          Sat Aug 30 2025 03:15:56 GMT+0530 (India Standard Time)
+[debug] [2025-08-29T21:45:56.298Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-29T21:45:56.513Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-29T21:45:56.514Z] > authorizing via signed-in user (sahiruwrcg@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  F:\Projects\flash-card-org\flash-card-org
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-08-29T21:45:59.540Z] Using project from CLI flag: flash-card-org
+[debug] [2025-08-29T21:45:59.547Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:45:59.548Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:45:59.573Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/flash-card-org [none]
+[debug] [2025-08-29T21:46:00.743Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/flash-card-org 200
+[debug] [2025-08-29T21:46:00.743Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/flash-card-org {"projectId":"flash-card-org","projectNumber":"26387954201","displayName":"flash-card-org","name":"projects/flash-card-org","resources":{"hostingSite":"flash-card-org"},"state":"ACTIVE","etag":"1_fa943e18-3ac7-4073-9111-bb516bb89bb1"}
+[info] i  Using project flash-card-org (flash-card-org) 
+[info] 
+=== Hosting Setup
+[debug] [2025-08-29T21:46:00.749Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:46:00.749Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:46:00.750Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/flash-card-org [none]
+[debug] [2025-08-29T21:46:01.258Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/flash-card-org 200
+[debug] [2025-08-29T21:46:01.259Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/flash-card-org {"projectId":"flash-card-org","projectNumber":"26387954201","displayName":"flash-card-org","name":"projects/flash-card-org","resources":{"hostingSite":"flash-card-org"},"state":"ACTIVE","etag":"1_fa943e18-3ac7-4073-9111-bb516bb89bb1"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2025-08-29T21:47:57.194Z] ExitPromptError: User force closed the prompt with SIGINT
+    at Interface.sigint (C:\Users\Asus\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\@inquirer\core\dist\commonjs\lib\create-prompt.js:101:37)
+    at Interface.emit (node:events:519:28)
+    at Interface.emit (node:domain:488:12)
+    at [_ttyWrite] [as _ttyWrite] (node:internal/readline/interface:1126:18)
+    at ReadStream.onkeypress (node:internal/readline/interface:265:20)
+    at ReadStream.emit (node:events:531:35)
+    at ReadStream.emit (node:domain:488:12)
+    at emitKeys (node:internal/readline/utils:371:14)
+    at emitKeys.next (<anonymous>)
+    at ReadStream.onData (node:internal/readline/emitKeypressEvents:64:36)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-08-29T21:48:03.827Z] ----------------------------------------------------------------------
+[debug] [2025-08-29T21:48:03.830Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Asus\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-08-29T21:48:03.830Z] CLI Version:   14.15.1
+[debug] [2025-08-29T21:48:03.830Z] Platform:      win32
+[debug] [2025-08-29T21:48:03.830Z] Node Version:  v20.17.0
+[debug] [2025-08-29T21:48:03.830Z] Time:          Sat Aug 30 2025 03:18:03 GMT+0530 (India Standard Time)
+[debug] [2025-08-29T21:48:03.831Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-29T21:48:04.119Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-29T21:48:04.120Z] > authorizing via signed-in user (sahiruwrcg@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  F:\Projects\flash-card-org\flash-card-org
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-08-29T21:48:09.660Z] Using project from CLI flag: flash-card-org
+[debug] [2025-08-29T21:48:09.661Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:48:09.661Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:48:09.663Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/flash-card-org [none]
+[debug] [2025-08-29T21:48:10.433Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/flash-card-org 200
+[debug] [2025-08-29T21:48:10.433Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/flash-card-org {"projectId":"flash-card-org","projectNumber":"26387954201","displayName":"flash-card-org","name":"projects/flash-card-org","resources":{"hostingSite":"flash-card-org"},"state":"ACTIVE","etag":"1_fa943e18-3ac7-4073-9111-bb516bb89bb1"}
+[info] i  Using project flash-card-org (flash-card-org) 
+[info] 
+=== Firestore Setup
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2025-08-29T21:48:10.440Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:48:10.440Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:48:10.440Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/flash-card-org/databases [none]
+[debug] [2025-08-29T21:48:11.786Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/flash-card-org/databases 200
+[debug] [2025-08-29T21:48:11.787Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/flash-card-org/databases {"databases":[{"name":"projects/flash-card-org/databases/(default)","uid":"33a1c10a-1692-4885-a05a-bf1121ec3afe","createTime":"2025-08-29T20:32:01.599481Z","updateTime":"2025-08-29T20:32:01.599481Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2025-08-29T20:48:12.905365Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"etag":"IPK579P/sI8DMK77n9nusI8D"}]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2025-08-29T21:48:11.788Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:48:11.788Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:48:11.789Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/flash-card-org/releases pageSize=10&pageToken=
+[debug] [2025-08-29T21:48:13.547Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/flash-card-org/releases 200
+[debug] [2025-08-29T21:48:13.547Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/flash-card-org/releases {"releases":[{"name":"projects/flash-card-org/releases/cloud.firestore","rulesetName":"projects/flash-card-org/rulesets/ca12aed8-c7f6-4f25-ba1e-6c875b997245","createTime":"2025-08-29T20:32:15.580011Z","updateTime":"2025-08-29T20:32:15.580011Z"}]}
+[debug] [2025-08-29T21:48:13.548Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:48:13.548Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:48:13.548Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/flash-card-org/rulesets/ca12aed8-c7f6-4f25-ba1e-6c875b997245 [none]
+[debug] [2025-08-29T21:48:14.988Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/flash-card-org/rulesets/ca12aed8-c7f6-4f25-ba1e-6c875b997245 200
+[debug] [2025-08-29T21:48:14.988Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/flash-card-org/rulesets/ca12aed8-c7f6-4f25-ba1e-6c875b997245 [omitted]
+[info] i  Downloaded the existing Firestore Security Rules from the Firebase console 
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2025-08-29T21:48:19.495Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:48:19.495Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:48:19.495Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:48:19.495Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:48:19.495Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/flash-card-org/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2025-08-29T21:48:19.497Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/flash-card-org/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2025-08-29T21:48:21.588Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/flash-card-org/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2025-08-29T21:48:21.588Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/flash-card-org/databases/(default)/collectionGroups/-/indexes {}
+[debug] [2025-08-29T21:48:21.590Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/flash-card-org/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2025-08-29T21:48:21.591Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/flash-card-org/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/flash-card-org/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[info] i  Downloaded the existing Firestore indexes from the Firebase console 
+[info] i  firestore.indexes.json is unchanged 
+[info] +  Wrote firestore.indexes.json 
+[info] 
+=== Hosting Setup
+[debug] [2025-08-29T21:48:21.605Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:48:21.606Z] Checked if tokens are valid: true, expires at: 1756507373014
+[debug] [2025-08-29T21:48:21.606Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/flash-card-org [none]
+[debug] [2025-08-29T21:48:22.745Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/flash-card-org 200
+[debug] [2025-08-29T21:48:22.745Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/flash-card-org {"projectId":"flash-card-org","projectNumber":"26387954201","displayName":"flash-card-org","name":"projects/flash-card-org","resources":{"hostingSite":"flash-card-org"},"state":"ACTIVE","etag":"1_fa943e18-3ac7-4073-9111-bb516bb89bb1"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 

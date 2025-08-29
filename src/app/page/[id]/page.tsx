@@ -8,12 +8,10 @@ import MarkdownViewer from "@/components/MarkdownViewer";
 import { getPage, getSubjects } from "@/services/firebase";
 import { Page, Subject } from "@/types";
 
-export default function PageView({ params }: { params: { id: string } }) {
-  const [page, setPage] = useState<Page | null>(null);
+export default function PageView({ params }: { params: { id: string } }) {  const [page, setPage] = useState<Page | null>(null);
   const [subject, setSubject] = useState<Subject | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const router = useRouter();
   
   useEffect(() => {
     async function loadPage() {

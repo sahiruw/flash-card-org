@@ -17,8 +17,7 @@ export default function SubjectManager({
   const [isAdding, setIsAdding] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
-  
-  const handleAddSubject = async (data: any) => {
+    const handleAddSubject = async (data: { name: string }) => {
     setIsAdding(true);
     try {
       await onAddSubject(data.name);
