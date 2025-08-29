@@ -44,7 +44,7 @@ export default function PageView({ params }: { params: { id: string } }) {  cons
     <div className="min-h-screen flex flex-col">
       <Navigation />
       
-      <main className="container mx-auto max-w-5xl px-4 py-8 flex-grow">
+      <main className="container mx-auto max-w-5xl px-4 py-4 sm:py-8 flex-grow">
         {isLoading ? (
           <div className="card text-center p-8">
             <p className="text-lg">Loading...</p>
