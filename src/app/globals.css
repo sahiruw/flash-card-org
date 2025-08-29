@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root {
+:root, .light {
   --background: #f8f5ff;
   --foreground: #333333;
   --primary: #9370DB;
@@ -18,17 +18,15 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1c1429;
-    --foreground: #f0eaf9;
-    --primary: #9370DB;
-    --primary-dark: #7851c2;
-    --secondary: #5a3d8a;
-    --accent: #b088ff;
-    --border: #352a50;
-    --card: #281e3b;
-  }
+.dark {
+  --background: #1c1429;
+  --foreground: #f0eaf9;
+  --primary: #9370DB;
+  --primary-dark: #7851c2;
+  --secondary: #5a3d8a;
+  --accent: #b088ff;
+  --border: #352a50;
+  --card: #281e3b;
 }
 
 /* Custom styles for the app */
