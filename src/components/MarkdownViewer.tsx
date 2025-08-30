@@ -92,13 +92,13 @@ export default function MarkdownViewer({ content, title }: MarkdownViewerProps) 
             <button
               key={section.title}
               className={`px-3 py-1 rounded-full text-sm transition-colors ${
-                activeSection === section.title
-                  ? "bg-[color:var(--primary)] text-white"
-                  : "bg-[color:var(--secondary)] hover:bg-opacity-80"
+              activeSection === section.title
+                ? "bg-[color:var(--primary)] text-white"
+                : "bg-[color:var(--secondary)] hover:bg-opacity-80"
               }`}
               onClick={() => setActiveSection(section.title)}
             >
-              {section.title}
+              {section.title.replace(/[#*]/g, "").trim()}
             </button>
           ))}
         </div>
