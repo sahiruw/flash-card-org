@@ -55,7 +55,7 @@ export default function FlashCardViewer({ cards, onClose }: FlashCardViewerProps
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg max-w-lg w-full p-6">
+      <div className="bg-white rounded-lg shadow-lg max-w-lg w-full p-6">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold text-[color:var(--primary)]">Flash Cards</h2>
           <button 

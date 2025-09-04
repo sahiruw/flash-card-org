@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
@@ -10,7 +10,7 @@ import { getPage, getSubjects, createFlashCards, getFlashCardsByPageId } from "@
 import { generateFlashCards } from "@/utils/ai";
 import { Page, Subject, FlashCard } from "@/types";
 
-export default function PageView({ params }: { params: { id: string } }) {
+export default function PageView({ params }: Promise<{ params: { id: string } }>) {
   const [page, setPage] = useState<Page | null>(null);
   const [subject, setSubject] = useState<Subject | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -19,10 +19,12 @@ export default function PageView({ params }: { params: { id: string } }) {
   const [showFlashCards, setShowFlashCards] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
   
+  const { id } = use(params)
+
   useEffect(() => {
     async function loadPage() {
       try {
-        const fetchedPage = await getPage(params.id);
+        const fetchedPage = await getPage(id);
         
         if (!fetchedPage) {
           setError("Page not found");
@@ -48,7 +50,7 @@ export default function PageView({ params }: { params: { id: string } }) {
     }
     
     loadPage();
-  }, [params.id]);
+  }, [id]);
   
   const handleGenerateFlashCards = async () => {
     if (!page) return;

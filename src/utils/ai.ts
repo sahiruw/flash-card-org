@@ -22,7 +22,7 @@ export async function generateFlashCards(title: string, content: string): Promis
     const genAI = new GoogleGenerativeAI(apiKey);
     
     // For text-only input, use the gemini-1.0-pro model
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
     
     // Safety settings
     const safetySettings = [

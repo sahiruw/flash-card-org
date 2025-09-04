@@ -141,6 +141,10 @@ export async function createFlashCards(
 export async function getFlashCardsByPageId(pageId: string): Promise<FlashCard[]> {
   const q = query(cardsCollection, where("pageId", "==", pageId), orderBy("createdAt", "desc"));
   const querySnapshot = await getDocs(q);
+
+  if (querySnapshot.empty) {
+    return [];
+  }
   
   return querySnapshot.docs.map(doc => {
     const data = doc.data();
