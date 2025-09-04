@@ -21,9 +21,9 @@
 .dark {
   --background: #1c1429;
   --foreground: #f0eaf9;
-  --primary: #9370DB;
-  --primary-dark: #7851c2;
-  --secondary: #5a3d8a;
+  --primary: #a991e5; /* Lightened for better contrast in dark mode */
+  --primary-dark: #8a6ed4; /* Adjusted for better contrast */
+  --secondary: #7653aa; /* Lightened for better visibility on dark backgrounds */
   --accent: #b088ff;
   --border: #352a50;
   --card: #281e3b;
@@ -40,7 +40,7 @@ body {
 }
 
 .btn-secondary {
-  @apply px-4 py-2 rounded-md font-medium bg-[color:var(--secondary)] hover:opacity-80 text-[color:var(--foreground)] transition-colors;
+  @apply px-4 py-2 rounded-md font-medium bg-[color:var(--secondary)] hover:opacity-80 text-[color:var(--foreground)] dark:text-white transition-colors;
 }
 
 .card {
@@ -93,17 +93,31 @@ body {
 }
 
 /* Styles for tables in dark mode */
+.dark .markdown-content th {
+  background-color: rgba(147, 112, 219, 0.3);
+  color: white;
+}
+
+.dark .markdown-content tr:nth-child(even) {
+  background-color: rgba(40, 30, 59, 0.5);
+}
+
+.dark .markdown-content tr:hover {
+  background-color: rgba(147, 112, 219, 0.25);
+}
+
 @media (prefers-color-scheme: dark) {
   .markdown-content th {
-    background-color: rgba(147, 112, 219, 0.25);
+    background-color: rgba(147, 112, 219, 0.3);
+    color: white;
   }
   
   .markdown-content tr:nth-child(even) {
-    background-color: rgba(40, 30, 59, 0.4);
+    background-color: rgba(40, 30, 59, 0.5);
   }
   
   .markdown-content tr:hover {
-    background-color: rgba(147, 112, 219, 0.2);
+    background-color: rgba(147, 112, 219, 0.25);
   }
 }
 
@@ -201,6 +215,10 @@ body {
   font-style: italic;
 }
 
+.dark .markdown-content blockquote {
+  color: #b6a0e0; /* Lighter color for better contrast in dark mode */
+}
+
 .markdown-content hr {
   border: none;
   border-top: 2px solid var(--border);
@@ -212,4 +230,9 @@ body {
   padding: 0.1rem 0.3rem;
   border-radius: 0.25rem;
   font-size: 0.9em;
+}
+
+.dark .markdown-content code:not(pre code) {
+  background-color: rgba(147, 112, 219, 0.25);
+  color: #e0d9f0;
 }

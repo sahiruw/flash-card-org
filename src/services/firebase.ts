@@ -1,11 +1,12 @@
 import { collection, addDoc, getDocs, deleteDoc, query, where, orderBy } from "firebase/firestore";
 import { db } from "@/lib/firebase";
-import { Page, Subject } from "@/types";
+import { Page, Subject, FlashCard } from "@/types";
 import { v4 as uuidv4 } from "uuid";
 
 // Collection references
 const subjectsCollection = collection(db, "subjects");
 const pagesCollection = collection(db, "pages");
+const cardsCollection = collection(db, "cards");
 
 // Subject operations
 export async function createSubject(name: string): Promise<Subject> {
@@ -111,4 +112,48 @@ export async function deletePage(id: string): Promise<void> {
   if (!querySnapshot.empty) {
     await deleteDoc(querySnapshot.docs[0].ref);
   }
+}
+
+// Flash card operations
+export async function createFlashCards(
+  pageId: string,
+  cards: Array<{ question: string; answer: string }>
+): Promise<FlashCard[]> {
+  const createdCards: FlashCard[] = [];
+  
+  const createPromises = cards.map(async (card) => {
+    const newCard: FlashCard = {
+      id: uuidv4(),
+      pageId,
+      question: card.question,
+      answer: card.answer,
+      createdAt: Date.now(),
+    };
+    
+    await addDoc(cardsCollection, newCard);
+    createdCards.push(newCard);
+  });
+  
+  await Promise.all(createPromises);
+  return createdCards;
+}
+
+export async function getFlashCardsByPageId(pageId: string): Promise<FlashCard[]> {
+  const q = query(cardsCollection, where("pageId", "==", pageId), orderBy("createdAt", "desc"));
+  const querySnapshot = await getDocs(q);
+
+  if (querySnapshot.empty) {
+    return [];
+  }
+  
+  return querySnapshot.docs.map(doc => {
+    const data = doc.data();
+    return {
+      id: data.id,
+      pageId: data.pageId,
+      question: data.question,
+      answer: data.answer,
+      createdAt: data.createdAt,
+    };
+  });
 }
