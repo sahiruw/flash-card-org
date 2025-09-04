@@ -52,45 +52,42 @@ export default function FlashCardViewer({ cards, onClose }: FlashCardViewerProps
       </div>
     );
   }
-
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg shadow-lg max-w-lg w-full p-6">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg max-w-lg w-full p-6">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold text-[color:var(--primary)]">Flash Cards</h2>
           <button 
             onClick={onClose}
-            className="text-gray-500 hover:text-gray-700"
+            className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
           >
             <span className="text-2xl">×</span>
           </button>
         </div>
         
-        <div className="mb-4 text-center text-sm">
+        <div className="mb-4 text-center text-sm text-gray-700 dark:text-gray-300">
           Card {currentCardIndex + 1} of {cards.length}
         </div>
-        
-        <div className="bg-[color:var(--card)] border border-[color:var(--border)] rounded-lg p-6 min-h-[200px] mb-6 cursor-pointer transition-all hover:shadow-md"
+          <div className="bg-[color:var(--card)] border border-[color:var(--border)] rounded-lg p-6 min-h-[200px] mb-6 cursor-pointer transition-all hover:shadow-md"
              onClick={toggleAnswer}>
-          <div className="mb-4 text-center text-sm text-gray-500">
+          <div className="mb-4 text-center text-sm text-gray-600 dark:text-gray-400">
             {showAnswer ? "Answer" : "Question"}
           </div>
-          <div className="text-center">
+          <div className="text-center text-[color:var(--foreground)]">
             {showAnswer ? currentCard.answer : currentCard.question}
           </div>
-          <div className="text-center mt-4 text-sm text-gray-500">
+          <div className="text-center mt-4 text-sm text-gray-600 dark:text-gray-400">
             {showAnswer ? "(Click to see question)" : "(Click to see answer)"}
           </div>
         </div>
-        
-        <div className="flex justify-between">
+          <div className="flex justify-between">
           <button 
             onClick={prevCard} 
             disabled={currentCardIndex === 0}
             className={`px-4 py-2 rounded-full ${
               currentCardIndex === 0 
-                ? "bg-gray-300 cursor-not-allowed" 
-                : "bg-[color:var(--secondary)] hover:opacity-90"
+                ? "bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-not-allowed" 
+                : "bg-[color:var(--secondary)] text-[color:var(--foreground)] hover:opacity-90"
             }`}
           >
             ← Previous
@@ -108,8 +105,8 @@ export default function FlashCardViewer({ cards, onClose }: FlashCardViewerProps
             disabled={currentCardIndex === cards.length - 1}
             className={`px-4 py-2 rounded-full ${
               currentCardIndex === cards.length - 1 
-                ? "bg-gray-300 cursor-not-allowed" 
-                : "bg-[color:var(--secondary)] hover:opacity-90"
+                ? "bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-not-allowed" 
+                : "bg-[color:var(--secondary)] text-[color:var(--foreground)] hover:opacity-90"
             }`}
           >
             Next →
