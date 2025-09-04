@@ -11,3 +11,11 @@ export interface Page {
   subjectId: string;
   createdAt: number;
 }
+
+export interface FlashCard {
+  id: string;
+  pageId: string;
+  question: string;
+  answer: string;
+  createdAt: number;
+}

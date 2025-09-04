@@ -10,6 +10,7 @@ A beautiful web application for organizing and managing Markdown notes. This app
 - **Responsive Design**: Optimized for mobile/tablet viewing with a beautiful purple color scheme
 - **Firebase Integration**: Store and retrieve your notes from Firebase
 - **Table Support**: Enhanced styling for tables with horizontal scrolling on mobile devices
+- **AI Flash Cards**: Generate flash cards from your notes using Google Gemini AI
 
 ## Getting Started
 
@@ -27,11 +28,12 @@ A beautiful web application for organizing and managing Markdown notes. This app
 npm install
 ```
 
-3. Configure Firebase:
+3. Configure Firebase and Gemini:
    - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
    - Enable Firestore database
    - Copy your Firebase config
-   - Create `.env.local` file and add your Firebase configuration:
+   - Get a Gemini API key from [Google AI Studio](https://ai.google.dev/)
+   - Create `.env.local` file and add your configuration:
 
 ```
 NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
@@ -41,6 +43,9 @@ NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
 NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
 NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
 NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=your_measurement_id
+
+# Google Gemini API key for flash card generation
+NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key
 ```
 
 4. Run the development server:
