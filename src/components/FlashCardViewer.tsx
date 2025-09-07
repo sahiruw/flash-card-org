@@ -156,7 +156,8 @@ export default function FlashCardViewer({ cards, onClose }: FlashCardViewerProps
               </div>
             </div>
           </div>
-        </div><div className="flex justify-between items-center">
+        </div>
+        <div className="flex justify-between items-center">
             <button 
               onClick={prevCard} 
               disabled={currentCardIndex === 0}
