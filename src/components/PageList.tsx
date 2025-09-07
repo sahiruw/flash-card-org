@@ -75,7 +75,7 @@ export default function PageList({
           {filteredPages.map(page => (
             <div 
               key={page.id} 
-              className="py-3 px-4 rounded-md bg-white dark:bg-gray-800 border border-[color:var(--border)]"
+              className="py-3 px-4 rounded-md bg-[color:var(--background)] border border-[color:var(--border)]"
             >
               <div className="flex justify-between">
                 <Link href={`/page/${page.id}`} className="font-medium text-lg hover:text-[color:var(--accent)]">

@@ -76,7 +76,7 @@ export default function SubjectManager({
         ) : (
           <ul className="space-y-2">
             {subjects.map(subject => (
-              <li key={subject.id} className="flex justify-between items-center py-2 px-3 rounded-md bg-white dark:bg-gray-800 border border-[color:var(--border)]">
+              <li key={subject.id} className="flex justify-between items-center py-2 px-3 rounded-md bg-[color:var(--background)] border border-[color:var(--border)]">
                 <span>{subject.name}</span>
                 <button
                   type="button"
