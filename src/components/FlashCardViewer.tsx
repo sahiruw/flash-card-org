@@ -84,7 +84,8 @@ export default function FlashCardViewer({ cards, onClose }: FlashCardViewerProps
         </div>
       </div>
     );
-  }  return (
+  }
+  return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 backdrop-blur-sm">
       <div className="bg-[color:var(--background)] rounded-xl shadow-2xl max-w-lg w-full p-8 relative overflow-hidden">
         {/* Decorative elements */}
