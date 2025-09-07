@@ -68,7 +68,7 @@ export default function FlashCardViewer({ cards, onClose }: FlashCardViewerProps
     if (!cards.length) {
     return (
       <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 backdrop-blur-sm">
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-lg w-full p-8 relative overflow-hidden">
+        <div className="bg-[color:var(--background)] rounded-xl shadow-2xl max-w-lg w-full p-8 relative overflow-hidden">
           {/* Decorative elements */}
           <div className="absolute -top-20 -left-20 w-40 h-40 rounded-full bg-[color:var(--primary)]/10 blur-2xl"></div>
           <div className="absolute -bottom-16 -right-16 w-36 h-36 rounded-full bg-[color:var(--accent)]/10 blur-2xl"></div>
@@ -86,7 +86,7 @@ export default function FlashCardViewer({ cards, onClose }: FlashCardViewerProps
     );
   }  return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 backdrop-blur-sm">
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-lg w-full p-8 relative overflow-hidden">
+      <div className="bg-[color:var(--background)] rounded-xl shadow-2xl max-w-lg w-full p-8 relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute -top-20 -left-20 w-40 h-40 rounded-full bg-[color:var(--primary)]/10 blur-2xl"></div>
         <div className="absolute -bottom-16 -right-16 w-36 h-36 rounded-full bg-[color:var(--accent)]/10 blur-2xl"></div>
@@ -162,7 +162,7 @@ export default function FlashCardViewer({ cards, onClose }: FlashCardViewerProps
               className={`flex items-center px-5 py-2.5 rounded-full font-medium shadow transition-all duration-200 ${
                 currentCardIndex === 0 
                   ? "bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed opacity-50" 
-                  : "bg-white dark:bg-gray-700 text-[color:var(--primary)] border border-[color:var(--border)] hover:shadow-md hover:translate-x-[-2px]"
+                  : "bg-[color:var(--background)] text-[color:var(--primary)] border border-[color:var(--border)] hover:shadow-md hover:translate-x-[-2px]"
               }`}
               aria-label="Previous card"
             >
@@ -187,7 +187,7 @@ export default function FlashCardViewer({ cards, onClose }: FlashCardViewerProps
               className={`flex items-center px-5 py-2.5 rounded-full font-medium shadow transition-all duration-200 ${
                 currentCardIndex === cards.length - 1 
                   ? "bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed opacity-50" 
-                  : "bg-white dark:bg-gray-700 text-[color:var(--primary)] border border-[color:var(--border)] hover:shadow-md hover:translate-x-[2px]"
+                  : "bg-[color:var(--background)] text-[color:var(--primary)] border border-[color:var(--border)] hover:shadow-md hover:translate-x-[2px]"
               }`}
               aria-label="Next card"
             >
